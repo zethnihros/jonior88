@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap');
+        
+        body {
+            background-color: #050505;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .signature-container {
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .signature-container:hover {
+            transform: translateY(-5px);
+        }
+
+        .glow-dot {
+            height: 6px;
+            width: 6px;
+            background-color: #38bdf8;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 15px #38bdf8, 0 0 30px #38bdf8;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+            100% { opacity: 0.4; transform: scale(1); }
+        }
+
+        .line-deco {
+            height: 1px;
+            width: 40px;
+            background: linear-gradient(90deg, transparent, #334155);
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+
+    <div class="signature-container group cursor-default">
+        <div class="flex items-center gap-4">
+            <div class="line-deco group-hover:bg-sky-500/50 transition-colors duration-500"></div>
+            
+            <div class="flex flex-col items-center">
+                <span class="text-[10px] tracking-[0.3em] text-slate-500 uppercase font-light mb-1 group-hover:text-slate-300 transition-colors">
+                    Crafted with precision
+                </span>
+                
+                <div class="flex items-center gap-2">
+                    <span class="text-slate-400 font-light tracking-tight">by</span>
+                    <span class="text-white font-bold tracking-tighter text-xl">
+                        SEO<span class="text-sky-400 group-hover:text-white transition-colors duration-500">By</span>Zeth
+                    </span>
+                    <span class="glow-dot"></span>
+                </div>
+            </div>
+
+            <div class="line-deco rotate-180 group-hover:bg-sky-500/50 transition-colors duration-500"></div>
+        </div>
+        
+        <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500 whitespace-nowrap">
+            <span class="text-[9px] text-sky-500/70 font-mono tracking-widest uppercase">Rank Higher • Dominate Now</span>
+        </div>
+    </div>
+
+</body>
+</html>
